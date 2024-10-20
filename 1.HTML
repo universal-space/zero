@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agricultural Management System</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+  <script>
+    function toggleForm(formType) {
+      const farmerLoginForm = document.getElementById('farmer-login');
+      const farmerCreateAccountForm = document.getElementById('farmer-create-account');
+      const retailerLoginForm = document.getElementById('retailer-login');
+      const retailerCreateAccountForm = document.getElementById('retailer-create-account');
+
+      // Add the fade class for a smooth transition effect
+      const forms = [farmerLoginForm, farmerCreateAccountForm, retailerLoginForm, retailerCreateAccountForm];
+      forms.forEach(form => {
+        form.classList.remove('fade');
+        form.classList.add('hidden');
+      });
+
+      if (formType === 'farmer-login') {
+        farmerLoginForm.classList.remove('hidden');
+      } else if (formType === 'farmer-create-account') {
+        farmerCreateAccountForm.classList.remove('hidden');
+      } else if (formType === 'retailer-login') {
+        retailerLoginForm.classList.remove('hidden');
+      } else {
+        retailerCreateAccountForm.classList.remove('hidden');
+      }
+
+      // Add the fade class to the displayed form
+      const activeForm = document.getElementById(formType);
+      activeForm.classList.add('fade');
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Agricultural Management System</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Farmer Login Section -->
+      <div class="login-card" id="farmer-login">
+        <h2>Farmer Login</h2>
+        <form action="/farmer-login" method="POST">
+          <label for="farmer-username">Username</label>
+          <input type="text" id="farmer-username" placeholder="Farmer Username" name="farmer-username" required>
+          
+          <label for="farmer-password">Password</label>
+          <input type="password" id="farmer-password" placeholder="Password" name="farmer-password" required>
+          
+          <button type="submit">Login</button>
+        </form>
+        <div class="error-message" id="farmer-error"></div> <!-- Placeholder for error messages -->
+        
+        <a href="#" onclick="toggleForm('farmer-create-account')">Create Farmer Account</a>
+        <a href="#" onclick="toggleForm('retailer-login')">Retailer Login</a>
+      </div>
+
+      <!-- Farmer Create Account Section -->
+      <div class="login-card hidden" id="farmer-create-account">
+        <h2>Create Farmer Account</h2>
+        <form action="/farmer-create-account" method="POST">
+          <label for="new-farmer-username">Username</label>
+          <input type="text" id="new-farmer-username" placeholder="Farmer Username" name="new-farmer-username" required>
+          
+          <label for="new-farmer-password">Password</label>
+          <input type="password" id="new-farmer-password" placeholder="Password" name="new-farmer-password" required>
+          
+          <button type="submit">Create Account</button>
+        </form>
+        <div class="error-message" id="farmer-create-account-error"></div> <!-- Placeholder for error messages -->
+        
+        <a href="#" onclick="toggleForm('farmer-login')">Farmer Login</a>
+      </div>
+
+      <!-- Retailer Login Section -->
+      <div class="login-card hidden" id="retailer-login">
+        <h2>Retailer Login</h2>
+        <form action="/retailer-login" method="POST">
+          <label for="retailer-username">Username</label>
+          <input type="text" id="retailer-username" placeholder="Retailer Username" name="retailer-username" required>
+          
+          <label for="retailer-password">Password</label>
+          <input type="password" id="retailer-password" placeholder="Password" name="retailer-password" required>
+          
+          <button type="submit">Login</button>
+        </form>
+        <div class="error-message" id="retailer-error"></div> <!-- Placeholder for error messages -->
+        
+        <a href="#" onclick="toggleForm('retailer-create-account')">Create Retailer Account</a>
+        <a href="#" onclick="toggleForm('farmer-login')">Farmer Login</a>
+      </div>
+
+      <!-- Retailer Create Account Section -->
+      <div class="login-card hidden" id="retailer-create-account">
+        <h2>Create Retailer Account</h2>
+        <form action="/retailer-create-account" method="POST">
+          <label for="new-retailer-username">Username</label>
+          <input type="text" id="new-retailer-username" placeholder="Retailer Username" name="new-retailer-username" required>
+          
+          <label for="new-retailer-password">Password</label>
+          <input type="password" id="new-retailer-password" placeholder="Password" name="new-retailer-password" required>
+          
+          <button type="submit">Create Account</button>
+        </form>
+        <div class="error-message" id="retailer-create-account-error"></div> <!-- Placeholder for error messages -->
+        
+        <a href="#" onclick="toggleForm('retailer-login')">Retailer Login</a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

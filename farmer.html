@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Details</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
+</head>
+<body>
+
+  <header>
+    <h1>Farmer Details</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="login-card">
+        <h2>Enter Your Details</h2>
+        <form action="/submit-farmer-details" method="POST">
+          
+          <!-- Crop Type Input -->
+          <label for="crop-type">Type of Crop</label>
+          <select id="crop-type" name="crop-type" required>
+            <option value="">Select a Crop</option>
+            <option value="wheat">Wheat</option>
+            <option value="rice">Rice</option>
+            <option value="corn">Corn</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="fruits">Fruits</option>
+            <!-- You can add more options as per requirements -->
+          </select>
+
+          <!-- Location Input -->
+          <label for="location">Your Location</label>
+          <input type="text" id="location" name="location" placeholder="Enter your location" required>
+
+          <!-- Export Level Input -->
+          <label for="export-level">Export Level</label>
+          <select id="export-level" name="export-level" required>
+            <option value="">Select Export Level</option>
+            <option value="local">Local Market</option>
+            <option value="country">Within Country</option>
+            <option value="global">Global Export</option>
+          </select>
+
+          <!-- Submit Button -->
+          <button type="submit">Submit Details</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

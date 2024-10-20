@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('output.jpg'); /* Replace with your oil paint texture image URL */
+    background-size: cover;
+    background-position: center;
+    color: #333; /* Dark text for contrast */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    color: #4CAF50; /* Green for the main heading */
+    margin: 20px 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    backdrop-filter: blur(5px); /* Creates a blurred effect for better readability */
+    border-radius: 10px; /* Optional for aesthetic */
+  }
+  
+  .login-card {
+    background-color: rgba(255, 255, 255, 0.9); /* White card background with slight transparency */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px; /* Increased width for better usability */
+    transition: transform 0.2s; /* Smooth scale effect */
+  }
+  
+  .login-card:hover {
+    transform: scale(1.05); /* Slightly scale on hover */
+  }
+  
+  .login-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Green for headings */
+  }
+  
+  .login-card button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s; /* Smooth background transition */
+  }
+  
+  .login-card button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  .login-card input[type="text"], 
+  .login-card input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1; /* Light input background */
+    color: #333; /* Dark text for input */
+  }
+  
+  .login-card a {
+    display: block;
+    margin-top: 10px;
+    color: #4CAF50; /* Green for links */
+    text-decoration: none;
+  }
+  
+  .login-card a:hover {
+    text-decoration: underline;
+  }
+  
+  .error-message {
+    color: #ff4747; /* Red for error messages */
+    margin: 10px 0;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .fade {
+    animation: fadeIn 0.5s; /* Fade-in effect */
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 600px) {
+    .container {
+      flex-direction: column; /* Stack the cards on smaller screens */
+      align-items: center; /* Center align */
+    }
+  
+    .login-card {
+      width: 90%; /* Full width on small screens */
+    }
+  }
+  
